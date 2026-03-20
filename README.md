@@ -53,7 +53,7 @@ https://docs.astral.sh/uv/#installation
 
 #### Initialize the Project with `uv`
 
-Now, let's start to manage our poject wiht `uv`. In our project root directory,
+Now, let's start to manage our poject with `uv`. In our project root directory,
 run
 
 ```bash
