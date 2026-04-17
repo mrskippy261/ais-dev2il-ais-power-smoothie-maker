@@ -2,8 +2,9 @@ import tempfile
 from pathlib import Path
 from main import get_ingredients
 
+"""
 def test_get_ingredients():
-    """get_ingredients successfully returns ingredients from the file"""
+    get_ingredients successfully returns ingredients from the file
     # Given: a recipe file with some ingredients
     content = "Apple\nBanana\nOrange\n"
     with tempfile.TemporaryDirectory() as tmp_path:
@@ -14,6 +15,20 @@ def test_get_ingredients():
         result = get_ingredients(recipe_file)
         # Then: we get the expected list of ingredients
         assert result == expected
+"""
+
+def test_get_ingredients(tmp_path):
+    # Given: a recipe file with ingredients
+    content = "Apple\nBanana\nOrange"
+    recipe_file = tmp_path / "my_smoothie.txt"
+    recipe_file.write_text(content)
+
+    # When: get_ingredients is called
+    result = get_ingredients(recipe_file)
+
+    # Then: it returns the list of ingredients
+    expected = ["Apple", "Banana", "Orange"]
+    assert result == expected
 
 
 def test_get_ingredients_file_does_not_exist():
