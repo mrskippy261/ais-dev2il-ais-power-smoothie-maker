@@ -35,7 +35,6 @@ jobs:
     - name: Check code
       run: uvx ruff check . --output-format=github
 
-    # Run tests
     - name: Run tests
       run: uv run pytest --junitxml=junit.xml
         
